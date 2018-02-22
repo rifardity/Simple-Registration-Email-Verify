@@ -1,0 +1,21 @@
+How To Start
+
+1. Create database and import foodedu.sql to your db
+
+2. Open folder config in database.php
+   
+private $dbName = 'mysql:dbname=foodedu;host:127.0.0.1' <------ change dbname with your database name
+3. Open index.php
+      
+$mail->Username = "" <-------On line 97//Fill with Email sender
+      
+$mail->Password = "" <-------On Line 98//Fill with Password sender
+      
+<a href='http://localhost/foodedu/verify.php?email=$email&token=$token'>VERIFY NOW<a>  <------- On Line 104 config your localhostnlink with your project name folder
+                                                                                                      
+
+
+
+
+Thank You                                                                                                  
+  
