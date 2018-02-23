@@ -1,3 +1,7 @@
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,7 +79,7 @@ if ($user->isLogin()!='') {
     $email= $_POST['email'];
     $phone= $_POST['phone'];
     $password= $_POST['password'];
-    $str='alkqmeroiACVMNEURPYKvx[921#$p!/(]@<>)';
+    $str='alkqmeroiACVMNEURPYKvx9324017f';
     $str = str_shuffle($str);
     $token = substr($str,0,10);
     $hasedPassword = password_hash($password,PASSWORD_DEFAULT);
@@ -94,14 +98,14 @@ if ($user->isLogin()!='') {
         'allow_self_signed' => true
       )
     );
-      $mail->Username = "rifarditaufiqyufananda.if@gmail.com"; //Email Pengirim
-      $mail->Password = ""; //Password Pengirim (Sesuaikan dengan password dari email pengirim)
+      $mail->Username = "rifarditaufiqyufananda.if@gmail.com";
+      $mail->Password = "dadada123";
       $mail->setFrom('rifarditaufiqyufananda.if@gmail.com', 'Food Edu');
       $mail->addAddress($email, $name);
       $mail->Subject = 'Verification Email Address';
       $mail->isHtml(true);
       $mail->Body = "Verify Your Email Address With Link Below <br><br>
-      <a href='http://localhost/foodedu/verify.php?email=$email&token=$token'>VERIFY NOW<a>
+      <a href='http://game29.000webhostapp.com/verify.php?email=$email&token=$token'>VERIFY NOW<a>
       ";
       if (!$mail->send()){
         echo "<script>swal('Fail Send Email Verification !!', 'Please Check Your Web System', 'error');</script>";

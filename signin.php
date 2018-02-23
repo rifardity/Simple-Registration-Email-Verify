@@ -1,3 +1,7 @@
+<?php
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +61,6 @@
 <?php
 require_once 'config/database.php';
 require_once 'class/class.user.php';
-session_start();
 $user = new User();
 if ($user->isLogin()!='') {
   header('Location:dashboard.php');

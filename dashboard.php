@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
 <?php
+ob_start();
+session_start();
 require_once 'config/database.php';
 require_once 'class/class.user.php';
-session_start();
 $user = new User();
 if ($user->isLogin()=='') {
   header('Location:signin.php');
@@ -14,6 +13,8 @@ if (isset($_POST['logout'])) {
 }
 $data = $user->View($_SESSION['user_session']);
 ?>
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="utf-8">
   <title>Dashboard Food Edu</title>
